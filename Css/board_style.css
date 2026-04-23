@@ -1,0 +1,6 @@
+.board {
+  width: 30%;
+  height: 100vh; 
+  border-right: 2px solid white;
+  box-sizing: border-box;
+}
