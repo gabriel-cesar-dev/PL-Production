@@ -1,6 +1,9 @@
 .board {
-  width: 30%;
-  height: 100vh; 
-  border-right: 2px solid white;
-  box-sizing: border-box;
+    width: 60%;
+    height: 100%;
+    background-color: rgb(32, 32, 34);
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }

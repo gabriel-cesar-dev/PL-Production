@@ -1,9 +1,10 @@
 .painel {
     width: 20%;
-    height: 100vh; 
-    border-right: 2px solid white;
+    height: 100%;
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 /* PARTE 1 - TOPO */ 
@@ -34,6 +35,7 @@
     background-color: #000000;
     color: white;
     font-size: 20px;
+    box-shadow: none;
 }
 
 .material-icons {
@@ -75,9 +77,4 @@
   display: block;
 }
 
-/* PARTE 3 - CHÃO */
-
-
 /* area de testes */
-
-
