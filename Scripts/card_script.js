@@ -19,7 +19,7 @@ function adicionar_custo(){
 }
 
 function deletar_custo(indice, indice_custo){
-    dados_card[indice].custos[indice_custo].splice(indice_custo,1);
+    dados_card[indice].custos.splice(indice_custo,1);
 }
 
 function modificar_custo(indice, indice_custo){
