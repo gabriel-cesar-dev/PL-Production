@@ -5,5 +5,30 @@
     box-sizing: border-box;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+}
+#caixa-botao-adicionar-card{
+    display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#botao-adicionar-card{
+    background-color: rgb(32, 32, 34);
+    border: none;
+    outline: none;
+
+    padding: 10px;
+
+    transition: 0.3s;
+}
+#botao-adicionar-card:hover{
+    background-color: rgb(12, 12, 14);
+
+    border-radius: 10px;
+}
+#botao-adicionar-card:active{
+    transform: scale(0.95);
 }
