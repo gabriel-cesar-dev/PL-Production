@@ -6,188 +6,218 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ICONES -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="Css/index_style.css">
-
-    <link rel="stylesheet" href="Css/board_style.css"> <!-- Css do board -->
-
-    <link rel="stylesheet" href="Css/card-board_style.css"> <!-- Css do card-board -->
-
-    <link rel="stylesheet" href="Css/painel_style.css"> <!-- Css do painel -->
-
-    <link rel="stylesheet" href="Css/card_style.css"> <!-- Css da card -->
-
-    <link rel="stylesheet" href="Css/restricao_style.css"> <!-- Css da restrição -->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Css do Boststrap -->
+    <link rel="stylesheet" href="Css/board_style.css">
+    <link rel="stylesheet" href="Css/painel_style.css">
 
     <title>PL Production</title>
-    <link rel="icon" type="image/jpg" href="Icones/Barra/Lupa.png">
+
 </head>
 
 <body class="animacao bg-dark text-white">
+
     <div class="layout">
 
-        <div class="painel">
+        <!-- =========================================
+             PAINEL ESQUERDO
+        ========================================== -->
 
+        <div class="painel bg-dark">
+
+            <!-- TOPO -->
             <div class="molde">
+
                 <div class="logo">
-                    <img src="Imagens/Catware Logo.png" class="img-logo">
-                    <h1 class="text-geral" style="color: white; padding-top: 40px;">PL Production</h1>
+
+                    <img src="Imagens/Catware Logo.png"
+                         class="img-logo">
+
+                    <h1 class="text-geral"
+                        style="color: white; padding-top: 40px;">
+
+                        PL Production
+
+                    </h1>
+
                 </div>
+
             </div>
 
-            <div class="alinhamento scroll" style="padding: 20px;">
+            <!-- CENTRO -->
+            <div class="alinhamento scroll"
+                 style="padding: 20px;">
 
-                <div class="btn-group" style="padding: 3px;">
-                    <button type="button" class="btn btn-dark border-0" style="width: 300px;">
-                        Painel teste 1
-                    </button>
+                <!-- LISTA DOS PAINEIS -->
+                <div id="lista-paineis"
+                     style="width: 100%;">
 
-                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split border-0"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                    </button>
-
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <button type="button" class="dropdown-item" data-bs-toggle="modal"
-                            data-bs-target="#modalRenomearPainel">
-                            Renomear
-                        </button>
-                        <li><a class="dropdown-item" href="#">Duplicar</a></li>
-                        <li><a class="dropdown-item" href="#">Excluir</a></li>
-                    </ul>
                 </div>
 
-                <button type="button" style="width: 320px; padding-top: 5px;" class="btn btn-dark"
-                    data-bs-toggle="modal" data-bs-target="#modalNovoPainel">
+                <!-- BOTAO NOVO PAINEL -->
+                <button type="button"
+                        style="width: 320px;"
+                        class="btn btn-dark"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalNovoPainel">
+
                     Novo painel
+
                 </button>
 
-                <!-- Modal novo painel -->
-                <div class="modal fade" id="modalNovoPainel" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content bg-dark text-white">
+                <!-- SAIR -->
+                <a href="index.html"
+                   style="text-decoration: none;">
 
-                            <div class="modal-header">
-                                <h5 class="modal-title">Novo Painel</h5>
-                                <button type="button" class="btn-close btn-close-white"
-                                    data-bs-dismiss="modal"></button>
-                            </div>
+                    <button type="button"
+                            class="btn btn-danger border-0"
+                            style="width: 320px; margin-top: 10px;">
 
-                            <div class="modal-body">
-                                <div class="alinhamento">
+                        Sair
 
-                                    <div class="input-group mb-3 bg-dark text-white">
-                                        <span class="input-group-text bg-dark text-white border-0">Título do
-                                            painel</span>
-                                        <input type="text" class="form-control bg-dark text-white"
-                                            aria-describedby="inputGroup-sizing-default">
-                                    </div>
+                    </button>
 
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-dark text-white border-0">Resumo curto</span>
-                                        <textarea class="form-control bg-dark text-white"
-                                            aria-label="With textarea"></textarea>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-danger" data-bs-dismiss="modal">
-                                    Cancelar
-                                </button>
-                                <button class="btn btn-secondary">
-                                    Criar
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal renomear painel -->
-                <div class="modal fade" id="modalRenomearPainel" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content bg-dark text-white">
-
-                            <div class="modal-header">
-                                <h5 class="modal-title">Renomear painel</h5>
-                                <button type="button" class="btn-close btn-close-white"
-                                    data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="modal-body">
-                                <div class="alinhamento">
-
-                                    <div class="input-group mb-3 bg-dark text-white">
-                                        <span class="input-group-text bg-dark text-white border-0">Título do
-                                            painel</span>
-                                        <input type="text" class="form-control bg-dark text-white"
-                                            aria-describedby="inputGroup-sizing-default">
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-dark text-white border-0">Resumo curto</span>
-                                        <textarea class="form-control bg-dark text-white"
-                                            aria-label="With textarea"></textarea>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-danger" data-bs-dismiss="modal">
-                                    Cancelar
-                                </button>
-                                <button class="btn btn-secondary">
-                                    Salvar
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <a href="index.html" style="text-decoration: none;">
-                    <div class="btn-group" style="padding: 3px; display: grid;">
-                        <button type="button" class="btn btn-danger border-0" style="width: 320px;">
-                            Sair
-                        </button>
-                    </div>
                 </a>
 
             </div>
 
         </div>
-        
-        <div class="board">
-            <div id="caixa-botao-adicionar-card">
-                <button id="botao-adicionar-card">
-                    <img src="Imagens/Botao.png" alt="Adicionar Card" style="width: 150px; height: 150px;">
-                </button>
-                <a style="text-align: center;">Adicionar Card</a>
-            </div>
 
-            <script src="Scripts/card_script.js"></script>
+        <!-- =========================================
+             BOARD CENTRAL
+        ========================================== -->
+
+        <div class="lateral_botao" id="lateral_botao">
+
+
+
         </div>
 
-        <div class="limitacao">
-            
+        <div class="board" id="board">
+
+            <!-- CONTEUDO DOS CARDS VAI AQUI -->
+
         </div>
+
+        <!-- =========================================
+             LADO DIREITO
+        ========================================== -->
+
+        <div class="limitacao bg-dark"
+             style="width: 20%;">
+
+        </div>
+
     </div>
 
+    <!-- =========================================
+         MODAL NOVO PAINEL
+    ========================================== -->
+
+    <div class="modal fade"
+         id="modalNovoPainel"
+         tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content bg-dark text-white">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        Novo Painel
+                    </h5>
+
+                    <button type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="input-group mb-3">
+
+                        <span class="input-group-text bg-dark text-white border-0">
+
+                            Título
+
+                        </span>
+
+                        <input type="text"
+                               id="titulo-painel"
+                               class="form-control bg-dark text-white">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <span class="input-group-text bg-dark text-white border-0">
+
+                            Resumo
+
+                        </span>
+
+                        <textarea id="resumo-painel"
+                                  class="form-control bg-dark text-white"></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="btn btn-danger"
+                            data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button class="btn btn-secondary"
+                            onclick="adicionarPainel()"
+                            data-bs-dismiss="modal">
+
+                        Criar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="Scripts/painel_script.js"></script>
+
+    <script src="Scripts/card_script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

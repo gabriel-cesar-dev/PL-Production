@@ -1,71 +1,183 @@
-const dados_card = [];
+// =======================================
+// CONTADOR DOS CARDS
+// =======================================
 
-// -------
-// Adicionar o OnClick na função que precisa
-// -------
+let contadorCard = 0;
 
-// Controle da array
-let contador_id = 0;
-let contador_id_custo = [];
 
-function adicionar_custo(){
-    const nome // Depois coloque o item do HTML;
-    const quantidade // Depois coloque o item do HTML;
+// =======================================
+// RENDERIZAR CARDS
+// =======================================
 
-    return{
-        nome,
-        quantidade,
+function renderizarCards() {
+
+    const board =
+        document.getElementById("board");
+
+    const botao_add = 
+        document.getElementById("lateral_botao");
+
+    board.innerHTML = "";
+
+
+    // ===================================
+    // BOTAO ADD CARD
+    // ===================================
+
+    botao_add.innerHTML = `
+
+    <div id="caixa-botao-adicionar-card" style="text-align: center;  ">
+        
+        <button id="botao-adicionar-card"
+                onclick="adicionarCard()">
+
+                <i class="fa fa-plus fa-2x" aria-hidden="true" style="color:white; padding: 10px;"></i>
+
+                <h5 style="color: white; padding: 10px;">Adicionar Card</h5>
+
+        </button>
+
+    </div>
+
+    `;
+
+
+    // ===================================
+    // SEM PAINEL
+    // ===================================
+
+    if (!painelAtual) {
+
+        return;
     }
-}
 
-function deletar_custo(indice, indice_custo){
-    dados_card[indice].custos.splice(indice_custo,1);
-}
 
-function modificar_custo(indice, indice_custo){
-    const novo_nome;  // Depois coloque o item do HTML
-    const nova_quantidade;  // Depois coloque o item do HTML 
+    // ===================================
+    // MOSTRAR CARDS
+    // ===================================
 
-    dados_card[indice].custos[indice_custo].nome = novo_nome;
-    dados_card[indice].custos[indice_custo].quantidade = nova_quantidade;
-}
+    painelAtual.cards.forEach(card => {
 
-function adicionar_card(){
-    contador_id_custo[contador_id] = 0;
+        board.innerHTML += `
 
-    const nome;  // Depois coloque o item do HTML
-    const img;  // Depois coloque o item do HTML
-    const custo_monetario;  // Depois coloque o item do HTML
-    const lucro_monetario;  // Depois coloque o item do HTML
+        <div class="card bg-dark text-white"
+             style="
+                width: 250px;
+                height: 350px;
+                margin: 10px;
+                border: 1px solid rgb(60,60,60);
+                padding: 10px;
+             ">
 
-    dados_card.push({
-        id: contador_id,
-        nome: nome,
-        img: img,
-        custo_monetario: custo_monetario,
-        lucro_monetario: lucro_monetario,
+            <img src="${card.imagem}"
+                 class="card-img-top"
+                 style="
+                    height: 150px;
+                    object-fit: cover;
+                 ">
 
-        custos: [
-            adicionar_custo(),
-            contador_id_custo[contador_id]++
-        ]
+            <div class="card-body">
+
+                <h5 class="card-title">
+
+                    ${card.nome}
+
+                </h5>
+
+                <p class="card-text">
+
+                    Custo: R$ ${card.custo}
+
+                </p>
+
+                <p class="card-text">
+
+                    Lucro: R$ ${card.lucro}
+
+                </p>
+
+                <button class="btn btn-danger"
+                        onclick="deletarCard(${card.id})">
+
+                    Excluir
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
     });
-    
-    contador_id++;
 }
 
-function deletar_card(indice){
-    dados_card.splice(indice, 1);
+
+// =======================================
+// ADICIONAR CARD
+// =======================================
+
+function adicionarCard() {
+
+    if (!painelAtual) {
+
+        alert("Selecione um painel");
+
+        return;
+    }
+
+    const nome =
+        prompt("Nome do card:");
+
+    if (!nome) return;
+
+    const imagem =
+        prompt("URL da imagem:");
+
+    const custo =
+        prompt("Custo:");
+
+    const lucro =
+        prompt("Lucro:");
+
+    const novoCard = {
+
+        id: contadorCard,
+
+        nome: nome,
+
+        imagem: imagem,
+
+        custo: custo,
+
+        lucro: lucro
+
+    };
+
+    painelAtual.cards.push(novoCard);
+
+    contadorCard++;
+
+    renderizarCards();
 }
 
-function modificar_card(indice, indice_custo){
-    const novo_nome;  // Depois coloque o item do HTML
-    const nova_img;  // Depois coloque o item do HTML;
-    const novo_custo;  // Depois coloque o item do HTML;
-    const novo_lucro;  // Depois coloque o item do HTML;
 
-    dados_card[indice].nome = novo_nome;
-    dados_card[indice].img = nova_img;
-    dados_card[indice].custo_monetario = novo_custo;
-    dados_card[indice].lucro_monetario = novo_lucro;
+// =======================================
+// DELETAR CARD
+// =======================================
+
+function deletarCard(id) {
+
+    const indice =
+        painelAtual.cards.findIndex(card => card.id === id);
+
+    painelAtual.cards.splice(indice, 1);
+
+    renderizarCards();
 }
+
+
+// =======================================
+// PRIMEIRA RENDERIZAÇÃO
+// =======================================
+
+renderizarCards();
