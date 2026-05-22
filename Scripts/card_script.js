@@ -1,14 +1,7 @@
-// =======================================
 // CONTADOR DOS CARDS
-// =======================================
-
 let contadorCard = 0;
 
-
-// =======================================
 // RENDERIZAR CARDS
-// =======================================
-
 function renderizarCards() {
 
     const board =
@@ -19,11 +12,7 @@ function renderizarCards() {
 
     board.innerHTML = "";
 
-
-    // ===================================
     // BOTAO ADD CARD
-    // ===================================
-
     botao_add.innerHTML = `
 
     <div id="caixa-botao-adicionar-card" style="text-align: center;  ">
@@ -41,21 +30,14 @@ function renderizarCards() {
 
     `;
 
-
-    // ===================================
     // SEM PAINEL
-    // ===================================
-
     if (!painelAtual) {
 
         return;
     }
 
 
-    // ===================================
     // MOSTRAR CARDS
-    // ===================================
-
     painelAtual.cards.forEach(card => {
 
         board.innerHTML += `
@@ -63,7 +45,7 @@ function renderizarCards() {
         <div class="card bg-dark text-white"
              style="
                 width: 250px;
-                height: 350px;
+                height: 420px;
                 margin: 10px;
                 border: 1px solid rgb(60,60,60);
                 padding: 10px;
@@ -96,6 +78,18 @@ function renderizarCards() {
 
                 </p>
 
+                <p class="card-text">
+
+                    Material Usado: ${card.material}
+
+                </p>
+
+                <p class="card-text">
+
+                    Quantidade do Material: ${card.qtd_material}
+
+                </p>
+
                 <button class="btn btn-danger"
                         onclick="deletarCard(${card.id})">
 
@@ -111,11 +105,7 @@ function renderizarCards() {
     });
 }
 
-
-// =======================================
 // ADICIONAR CARD
-// =======================================
-
 function adicionarCard() {
 
     if (!painelAtual) {
@@ -139,6 +129,12 @@ function adicionarCard() {
     const lucro =
         prompt("Lucro:");
 
+    const material =
+        prompt("Nome do Material:");
+    
+    const qtd_material = 
+        prompt("Quantidade do Material:");
+
     const novoCard = {
 
         id: contadorCard,
@@ -149,8 +145,11 @@ function adicionarCard() {
 
         custo: custo,
 
-        lucro: lucro
+        lucro: lucro,
 
+        material: material,
+
+        qtd_material: qtd_material
     };
 
     painelAtual.cards.push(novoCard);
@@ -160,11 +159,7 @@ function adicionarCard() {
     renderizarCards();
 }
 
-
-// =======================================
 // DELETAR CARD
-// =======================================
-
 function deletarCard(id) {
 
     const indice =
@@ -175,9 +170,5 @@ function deletarCard(id) {
     renderizarCards();
 }
 
-
-// =======================================
 // PRIMEIRA RENDERIZAÇÃO
-// =======================================
-
 renderizarCards();
