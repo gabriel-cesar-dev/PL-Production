@@ -12,7 +12,8 @@ const dados_limitacao_card = [
 
 const dados_limitacao_material = [
     id_material,
-    quantidade
+    quantidade,
+    quantidade_max
 ]
 
 // Não sei como programar a interface desta parte, então vai o que pensei:
@@ -39,4 +40,17 @@ if(cards.dados_limtacao_card.quantidade_min ! NULL)
     cards.dados_limtacao_card.quantidade += cards.dados_limtacao_card.quantidade_min
 }
 
+2 - MAXIMO DO CARD
+
+if(cards.dados_limtacao_card.quantidade = cards.dados_limtacao_card.quantidade_min)
+{
+     Para o for que adiciona a quantidde;
+}
+
+3 - MAXIMO DE PRODUTOS
+
+if(cards.dados_limitacao_material.quantidade + cards.qtd_material > cards.dados_limitacao_material.quantidade_max)
+{
+    Não permite mais amazenar
+}
 */
