@@ -2,21 +2,41 @@
     width: 50%;
     height: 100%;
     background-color: rgb(32, 32, 34);
+
     box-sizing: border-box;
+
     position: relative;
+
     display: flex;
+
     flex-wrap: wrap;
-    overflow-x: auto;
+
+    align-content: flex-start;
+
+    justify-content: flex-start;
+
+    padding: 10px;
+
+    overflow-y: auto;
 }
 
-.lateral_botao{
+.lateral_botao {
+
     width: 10%;
+
+    min-width: 140px;
+
     height: 100%;
+
     background-color: rgb(32, 32, 34);
-    box-sizing: border-box;
-    position: relative;
+
     display: flex;
-    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding-top: 10px;
 }
 
 #caixa-botao-adicionar-card{
